@@ -260,13 +260,16 @@ nav ol {
 
 /*
  * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
- * 2. Improves image quality when scaled in IE7
+ * 2. Emphasizes image quality over speed when scaling in FF
+ *	  https://developer.mozilla.org/en/CSS/image-rendering
+ * 3. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
 
 img {
     border: 0; /* 1 */
-    -ms-interpolation-mode: bicubic; /* 2 */
+	image-rendering:optimizeQuality;  /* 2 */
+    -ms-interpolation-mode: bicubic; /* 3 */
 }
 
 /*
